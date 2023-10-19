@@ -12,14 +12,22 @@ class AspectRatioPage extends StatelessWidget {
           child: Container(
             width: 300,
             height: 300,
-            alignment: Alignment.center, //Bắt buộc set, nếu không AspectRatio sẽ full parent của nó.
+            alignment: Alignment.center, // Bắt buộc set, nếu không size của child sẽ full parent.
             color: Colors.blue,
             child: AspectRatio(
-              // AspectRatio Widget :
-              // - Hỗ trợ chỉ định tỉ lệ giữa chiều rộng và chiều cao của widget con.
-              // - Child không thể set width height nếu wrap bởi AspectRatio
-              // - Giá trị cao hơn luôn fill parent. Ví dụ
-              //  + aspectRatio : 1/2 => chiều cao sẽ fill parent, chiều rộng sẽ là 1/2 chiều cao
+
+              //====================================================================================================
+              // ASPECT RATIO :
+              // - CHỨC NĂNG :
+              //   + Hỗ trợ chỉ định tỉ lệ giữa width và height của child widget.
+              // - THUỘC TÍNH :
+              //   + aspectRatio : Tỉ lệ giữa width và height của child widget.
+              // - LƯU Ý :
+              //   + Child không thể set width height nếu wrap bởi AspectRatio
+              //   + Giá trị cao hơn luôn fill parent. Ví dụ
+              //     + aspectRatio : 1/2 => height sẽ fill parent, width sẽ là 1/2 chiều cao
+              //====================================================================================================
+
               aspectRatio: 1 / 2,
               child: Container(
                 color: Colors.red,

@@ -10,9 +10,15 @@ class ConstrainedBoxPage extends StatelessWidget {
         title: const Text('ConstrainedBox Demo'),
       ),
       body: Center(
-        // Mô tả :
-        // - Hỗ trợ giới hạn kích thước của widget con
-        // - contraints : BoxConstraints , giới hạn kích thước của widget con
+
+        //====================================================================================================
+        // CONSTRANIED BOX :
+        // - CHỨC NĂNG :
+        //    + Hỗ trợ giới hạn kích thước của widget con 
+        // - THUỘC TÍNH :
+        //    + constraints : BoxConstraints , giới hạn kích thước của widget con
+        //====================================================================================================
+        
         child: ConstrainedBox(
           constraints: const BoxConstraints(
             minWidth: 100,

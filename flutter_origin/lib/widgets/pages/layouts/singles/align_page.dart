@@ -11,20 +11,17 @@ class AlignPage extends StatelessWidget {
           height: 200,
           width: 200,
           color: Colors.blue,
-          // Align Widget :
-          // - Canh chỉnh vị trí của widget con so với widget cha.
-          // - Như code bên dưới :
-          //   + ContainerRed đang nằm góc phải bên dưới ContainerBlue
+
+          //====================================================================================================
+          // ALIGN:
+          // - CHỨC NĂNG: Canh chỉnh vị trí của sub widget.
+          // - THUỘC TÍNH:
+          //   + alignment: Vị trí của sub widget trong parent widget.
+          // - VÍ DỤ: 
+          //   + Align đang wrap Container màu đỏ, Container này nằm ở vị trí Bottom-Right.
+          //====================================================================================================
+
           child: Align(
-            // Alignment.topLeft
-            // Alignment.topCenter
-            // Alignment.topRight
-            // Alignment.centerLeft
-            // Alignment.center
-            // Alignment.centerRight
-            // Alignment.bottomLeft
-            // Alignment.bottomCenter
-            // Alignment.bottomRight
             alignment: Alignment.bottomRight,
             child: Container(
               height: 100,
