@@ -7,31 +7,35 @@ class BaseLinePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Baseline Demo'),
-      ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Baseline(
-              baseline: 50,
+      body: SafeArea(
+        child: Center(
+          child: Container(
+            width: 200,
+            height: 200,
+            color: Colors.purple,
+
+            //====================================================================================================
+            // BASELINE :
+            // - CHỨC NĂNG : Hỗ trợ canh chỉnh child theo đường cơ sở của parent.
+            // - THUỘC TÍNH :
+            //   + baseline : Giá trị cơ sở của child
+            //   + baselineType : Loại cơ sở của child
+            //====================================================================================================
+            
+            child: Baseline(
+              // 0: ContainerYellow sẽ nằm trên ContainerPurple, Bottom của ContainerYellow sẽ nằm trên Top của ContainerPurple
+              // baseline > 0 đẩy xuống dưới
+              // baseline < 0 đẩy lên trên
+              baseline: 0, 
               baselineType: TextBaseline.alphabetic,
-              child: Text(
-                'Hello',
-                style: TextStyle(fontSize: 30),
+              child: Container(
+                width: 50,
+                height: 50,
+                color: Colors.yellow,
               ),
-            ),
-            SizedBox(height: 20),
-            Baseline(
-              baseline: 50,
-              baselineType: TextBaseline.alphabetic,
-              child: Text(
-                'World',
-                style: TextStyle(fontSize: 50),
-              ),
-            ),
-          ],
+            )
+            
+          ),
         ),
       ),
     );

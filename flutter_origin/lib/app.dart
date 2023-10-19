@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_origin/widgets/pages/layouts/singles/align_page.dart';
 import 'package:flutter_origin/widgets/pages/layouts/singles/aspect_ratio_page.dart';
+import 'package:flutter_origin/widgets/pages/layouts/singles/base_line_page.dart';
+import 'package:flutter_origin/widgets/pages/layouts/singles/container_page.dart';
 import 'package:flutter_origin/widgets/pages/main_pages/main_page.dart';
 
 class OriginApp extends StatelessWidget {
@@ -35,11 +37,11 @@ class OriginApp extends StatelessWidget {
       // home: const MainPage(title: 'Flutter Demo Home Page'),
       //  home: const AlignPage(),
       //  home: const AspectRatioPage(),
-      // home: const BaseLinePage(),
+       home: const BaseLinePage(),
       // home: const CenterPage(),
       // home: const ConstrainedBoxPage(),
       // home: const ContainerPage(),
-      // home: const ContainerPage(),
+      //  home: const ContainerPage(),
     );
   }
 }
