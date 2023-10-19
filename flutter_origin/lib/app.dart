@@ -5,6 +5,12 @@ import 'package:flutter_origin/widgets/pages/layouts/singles/align_page.dart';
 import 'package:flutter_origin/widgets/pages/layouts/singles/aspect_ratio_page.dart';
 import 'package:flutter_origin/widgets/pages/layouts/singles/base_line_page.dart';
 import 'package:flutter_origin/widgets/pages/layouts/singles/container_page.dart';
+import 'package:flutter_origin/widgets/pages/layouts/singles/custom_single_child_layout_page.dart';
+import 'package:flutter_origin/widgets/pages/layouts/singles/fittedbox_page.dart';
+import 'package:flutter_origin/widgets/pages/layouts/singles/limited_box_page.dart';
+import 'package:flutter_origin/widgets/pages/layouts/singles/offstage_page_page.dart';
+import 'package:flutter_origin/widgets/pages/layouts/singles/overflow_box_page.dart';
+import 'package:flutter_origin/widgets/pages/layouts/singles/size_box_page.dart';
 import 'package:flutter_origin/widgets/pages/main_pages/main_page.dart';
 
 class OriginApp extends StatelessWidget {
@@ -37,11 +43,17 @@ class OriginApp extends StatelessWidget {
       // home: const MainPage(title: 'Flutter Demo Home Page'),
       //  home: const AlignPage(),
       //  home: const AspectRatioPage(),
-       home: const BaseLinePage(),
+      //  home: const BaseLinePage(),
       // home: const CenterPage(),
       // home: const ConstrainedBoxPage(),
       // home: const ContainerPage(),
-      //  home: const ContainerPage(),
+      // home: const ContainerPage(),
+      // home: const CustomSingleChildLayoutPage(),
+      // home: const FittedBoxPage(),
+      // home: const LimitedBoxPage(),
+      // home:  const OffstagePage(),
+      //  home:  const OverflowBoxPage(),
+       home:  const SizeBoxPage(),
     );
   }
 }
