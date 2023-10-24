@@ -14,6 +14,13 @@ class BaseStatefulWidget extends StatefulWidget {
         "===> ${DateTime.now()} - $runtimeType - CREATE STATE was called");
     return _BaseStatefulWidgetState();
   }
+
+  @override
+  StatefulElement createElement() {
+    debugPrint(
+        "===> ${DateTime.now()} - $runtimeType - CREATE ELEMENT was called");
+    return super.createElement();
+  }
 }
 
 class _BaseStatefulWidgetState extends State<BaseStatefulWidget> {
