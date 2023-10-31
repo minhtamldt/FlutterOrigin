@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_origin/widgets/pages/main_pages/main_page.dart';
+import 'package:flutter_origin/presentations/main/main_page.dart';
 
 class OriginApp extends StatelessWidget {
   const OriginApp({super.key});
@@ -32,4 +32,3 @@ class OriginApp extends StatelessWidget {
     );
   }
 }
-
