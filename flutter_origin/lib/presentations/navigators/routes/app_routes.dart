@@ -7,20 +7,43 @@ class AppRouter extends $AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          path: RouteConstants.pageA,
-          page: RouteA.page,
+          initial: true,
+          path: RouteConstants.loginPage,
+          page: LoginRoute.page,
         ),
         AutoRoute(
-          path: RouteConstants.pageB,
-          page: RouteB.page,
+          path: RouteConstants.mainTabbedPage,
+          page: MainTabbedRoute.page,
+          children: [
+            AutoRoute(
+              initial: true,
+              path: RouteConstants.pageA,
+              page: RouteA.page,
+              children: [
+                AutoRoute(
+                  initial: true,
+                  path: RouteConstants.pageA01,
+                  page: RouteA01.page,
+                ),
+                AutoRoute(
+                  path: RouteConstants.pageA02,
+                  page: RouteA02.page,
+                ),
+              ],
+            ),
+            AutoRoute(
+              path: RouteConstants.pageB,
+              page: RouteB.page,
+            ),
+            AutoRoute(
+              path: RouteConstants.pageC,
+              page: RouteC.page,
+            ),
+          ],
         ),
         AutoRoute(
-          path: RouteConstants.pageC,
-          page: RouteC.page,
-        ),
-        AutoRoute(
-          path: RouteConstants.pageD,
-          page: RouteD.page,
+          path: RouteConstants.setting,
+          page: SettingRoute.page,
         ),
       ];
 }

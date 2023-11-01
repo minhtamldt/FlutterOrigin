@@ -4,8 +4,8 @@ import 'package:flutter_origin/common/bases/widgets/base_stateless_widget.dart';
 import 'package:flutter_origin/presentations/navigators/routes/route_constants.dart';
 
 @RoutePage()
-class PageD extends BaseStatelessWidget {
-  PageD({super.key});
+class LoginPage extends BaseStatelessWidget {
+  LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,23 +19,12 @@ class PageD extends BaseStatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text("Page D"),
-            const SizedBox(height: 16),
             ElevatedButton(
                 onPressed: () {
-                  AutoRouter.of(context).pop(context);
+                  AutoRouter.of(context)
+                      .replaceNamed(RouteConstants.mainTabbedPage);
                 },
-                child: const Text("Back To Page C")),
-            ElevatedButton(
-                onPressed: () {
-                  AutoRouter.of(context).navigateNamed(RouteConstants.pageB);
-                },
-                child: const Text("Back To Page B")),
-            ElevatedButton(
-                onPressed: () {
-                  AutoRouter.of(context).popUntilRoot();
-                },
-                child: const Text("Back To Root")),
+                child: const Text("Login")),
           ],
         ),
       )),

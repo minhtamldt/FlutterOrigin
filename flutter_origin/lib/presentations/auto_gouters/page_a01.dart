@@ -4,30 +4,40 @@ import 'package:flutter_origin/common/bases/widgets/base_stateless_widget.dart';
 import 'package:flutter_origin/presentations/navigators/routes/app_routes.gr.dart';
 
 @RoutePage()
-class PageB extends BaseStatelessWidget {
-  PageB({super.key});
+class PageA01 extends BaseStatelessWidget {
+  PageA01({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Page B"),
+        title: const Text("Page A 01"),
       ),
       body: Container(
-        color: Colors.blueAccent,
+        color: Colors.blueGrey,
         child: SafeArea(
             child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text("Page B"),
               const SizedBox(height: 16),
               ElevatedButton(
                   onPressed: () {
-                    AutoRouter.of(context).navigate(RouteC());
+                    context.pushRoute(RouteA02());
                   },
-                  child: const Text("Selected Tab C")),
+                  child: const Text(
+                    "Go to Page A 02",
+                    style: TextStyle(color: Colors.black),
+                  )),
+              ElevatedButton(
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  child: const Text(
+                    "Show Drawer",
+                    style: TextStyle(color: Colors.black),
+                  )),
             ],
           ),
         )),
