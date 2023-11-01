@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_origin/presentations/main/main_page.dart';
+import 'package:flutter_origin/presentations/navigators/routes/app_routes.dart';
 
 class OriginApp extends StatelessWidget {
-  const OriginApp({super.key});
+  OriginApp({super.key});
+
+  final AppRouter _appRouter = AppRouter();
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: _appRouter.config(),
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -28,7 +31,6 @@ class OriginApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MainPage(title: 'Flutter Demo Home Page'),
     );
   }
 }
