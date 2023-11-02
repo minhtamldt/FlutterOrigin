@@ -1,20 +1,33 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_origin/common/bases/widgets/base_page.dart';
 import 'package:flutter_origin/presentations/navigators/routes/route_constants.dart';
 import 'package:flutter_origin/presentations/pages/login/bloc/login_bloc.dart';
 import 'package:flutter_origin/presentations/pages/login/bloc/login_event.dart';
 import 'package:flutter_origin/presentations/pages/login/bloc/login_state.dart';
 
 @RoutePage()
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class LoginPage extends BasePage<LoginBloc> {
+  final LoginBloc _bloc = LoginBloc();
+
+  LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
+
+  @override
+  LoginBloc get bloc => _bloc;
 }
 
 class _LoginPageState extends State<LoginPage> {
+  @override
+  void initState() {
+    super.initState();
+    widget.bloc.state.username = "hello dart";
+    widget.bloc.state.password = "123456";
+  }
+
   @override
   Widget build(BuildContext context) {
     TextEditingController usernameController = TextEditingController();
@@ -38,10 +51,10 @@ class _LoginPageState extends State<LoginPage> {
         child: SafeArea(
           child: BlocProvider(
             create: (context) {
-              var bloc = LoginBloc();
+              var bloc = widget.bloc;
               usernameController.text = bloc.state.username!;
               passwordControler.text = bloc.state.password!;
-              return LoginBloc();
+              return widget.bloc;
             },
             child: BlocListener<LoginBloc, LoginState>(
               listenWhen: (previous, current) => true,
@@ -142,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(snackBar);
                             AutoRouter.of(context)
-                                .replaceNamed(RouteConstants.mainTabbedPage);
+                                .pushNamed(RouteConstants.mainTabbedPage);
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white,

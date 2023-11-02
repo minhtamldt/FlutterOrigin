@@ -1,10 +1,14 @@
-import 'package:equatable/equatable.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
+import 'package:flutter_origin/common/bases/blocs/states/page_state.dart';
 
-class LoginState extends Equatable {
+class LoginState extends PageState {
   String? username;
   String? password;
 
-  LoginState({this.username = "hellodart", this.password = "123456"});
+  LoginState({
+    this.username,
+    this.password,
+  });
 
   LoginState copyWith({String? username, String? password}) {
     return LoginState(

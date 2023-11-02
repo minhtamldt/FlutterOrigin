@@ -1,6 +1,6 @@
-import 'package:equatable/equatable.dart';
+import 'package:flutter_origin/common/bases/blocs/events/page_event.dart';
 
-class LoginEvent extends Equatable {
+class LoginEvent extends PageEvent {
   @override
   List<Object?> get props => [];
 }

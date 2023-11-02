@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 class BaseStatefulWidget extends StatefulWidget {
   final Widget? child;
-  BaseStatefulWidget({super.key, this.child}) {
-    debugPrint("===> ${DateTime.now()} - $runtimeType - CONTRUCTORS");
-  }
+  const BaseStatefulWidget({super.key, this.child});
 
   @override
   // ignore: no_logic_in_create_state

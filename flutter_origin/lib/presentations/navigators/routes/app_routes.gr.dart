@@ -28,9 +28,11 @@ abstract class $AppRouter extends _i9.RootStackRouter {
   @override
   final Map<String, _i9.PageFactory> pagesMap = {
     LoginRoute.name: (routeData) {
+      final args = routeData.argsAs<LoginRouteArgs>(
+          orElse: () => const LoginRouteArgs());
       return _i9.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i1.LoginPage(),
+        child: _i1.LoginPage(key: args.key),
       );
     },
     MainTabbedRoute.name: (routeData) {
@@ -88,16 +90,31 @@ abstract class $AppRouter extends _i9.RootStackRouter {
 
 /// generated route for
 /// [_i1.LoginPage]
-class LoginRoute extends _i9.PageRouteInfo<void> {
-  const LoginRoute({List<_i9.PageRouteInfo>? children})
-      : super(
+class LoginRoute extends _i9.PageRouteInfo<LoginRouteArgs> {
+  LoginRoute({
+    _i10.Key? key,
+    List<_i9.PageRouteInfo>? children,
+  }) : super(
           LoginRoute.name,
+          args: LoginRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'LoginRoute';
 
-  static const _i9.PageInfo<void> page = _i9.PageInfo<void>(name);
+  static const _i9.PageInfo<LoginRouteArgs> page =
+      _i9.PageInfo<LoginRouteArgs>(name);
+}
+
+class LoginRouteArgs {
+  const LoginRouteArgs({this.key});
+
+  final _i10.Key? key;
+
+  @override
+  String toString() {
+    return 'LoginRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
