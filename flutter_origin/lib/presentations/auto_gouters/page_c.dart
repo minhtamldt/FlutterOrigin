@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_origin/common/bases/widgets/base_stateless_widget.dart';
-import 'package:flutter_origin/presentations/navigators/routes/app_routes.gr.dart';
 import 'package:flutter_origin/presentations/navigators/routes/route_constants.dart';
 
 @RoutePage()
