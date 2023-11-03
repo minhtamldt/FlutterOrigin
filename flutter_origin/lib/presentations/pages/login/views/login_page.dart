@@ -155,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(snackBar);
                             AutoRouter.of(context)
-                                .pushNamed(RouteConstants.mainTabbedPage);
+                                .replaceNamed(RouteConstants.mainTabbedPage);
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white,

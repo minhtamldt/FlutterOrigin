@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_origin/common/bases/widgets/base_stateless_widget.dart';
 import 'package:flutter_origin/presentations/navigators/routes/app_routes.gr.dart';
 
-@RoutePage()
 class PageB extends BaseStatelessWidget {
   PageB({super.key});
 

@@ -32,8 +32,8 @@ class AppRouter extends $AppRouter {
               ],
             ),
             AutoRoute(
-              path: RouteConstants.pageB,
-              page: RouteB.page,
+              path: RouteConstants.news,
+              page: NewsRoute.page,
             ),
             AutoRoute(
               path: RouteConstants.pageC,
