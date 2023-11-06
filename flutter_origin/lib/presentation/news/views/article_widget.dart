@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_origin/data/repository/news/models/article.dart';
 
 class ArticleWidget extends StatelessWidget {
-  final ArticleEntity? article;
+  final ArticleModel? article;
   final bool? isRemovable;
-  final void Function(ArticleEntity article)? onRemove;
-  final void Function(ArticleEntity article)? onArticlePressed;
+  final void Function(ArticleModel article)? onRemove;
+  final void Function(ArticleModel article)? onArticlePressed;
 
   const ArticleWidget({
     Key? key,

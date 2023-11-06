@@ -5,7 +5,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_origin/data/repository/news/models/article.dart';
 
 abstract class NewsPageState extends Equatable {
-  final List<ArticleEntity>? articles;
+  final List<ArticleModel>? articles;
   final DioException? error;
 
   const NewsPageState({this.articles, this.error});
@@ -19,7 +19,7 @@ class NewsPageLoading extends NewsPageState {
 }
 
 class NewsPageDone extends NewsPageState {
-  const NewsPageDone(List<ArticleEntity> article) : super(articles: article);
+  const NewsPageDone(List<ArticleModel> article) : super(articles: article);
 }
 
 class NewsPageError extends NewsPageState {

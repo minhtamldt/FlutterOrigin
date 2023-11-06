@@ -1,6 +1,6 @@
 import 'package:flutter_origin/data/repository/news/models/article.dart';
 
-class ArticleDto extends ArticleEntity {
+class ArticleDto extends ArticleModel {
   const ArticleDto(
       {super.id,
       super.author,
