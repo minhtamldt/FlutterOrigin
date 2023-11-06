@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_origin/data/repository/news/models/article.dart';
+import 'package:flutter_origin/data/data_provider/services/news/dto/response/article_dto.dart';
 
 class ArticleWidget extends StatelessWidget {
-  final ArticleModel? article;
+  final ArticleDto? article;
   final bool? isRemovable;
-  final void Function(ArticleModel article)? onRemove;
-  final void Function(ArticleModel article)? onArticlePressed;
+  final void Function(ArticleDto article)? onRemove;
+  final void Function(ArticleDto article)? onArticlePressed;
 
   const ArticleWidget({
     Key? key,
@@ -39,7 +39,7 @@ class ArticleWidget extends StatelessWidget {
 
   Widget _buildImage(BuildContext context) {
     return CachedNetworkImage(
-        imageUrl: article!.urlToImage!,
+        imageUrl: article!.urlToImage ??  '',
         imageBuilder: (context, imageProvider) => Padding(
               padding: const EdgeInsetsDirectional.only(end: 14),
               child: ClipRRect(
