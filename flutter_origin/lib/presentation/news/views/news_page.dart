@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_origin/features/daily_news/presentation/news/bloc/news_page_bloc.dart';
-import 'package:flutter_origin/features/daily_news/presentation/news/bloc/news_page_event.dart';
-import 'package:flutter_origin/features/daily_news/presentation/news/bloc/news_page_state.dart';
-import 'package:flutter_origin/features/daily_news/presentation/news/views/article_widget.dart';
+import 'package:flutter_origin/presentation/news/bloc/news_page_bloc.dart';
+import 'package:flutter_origin/presentation/news/bloc/news_page_event.dart';
+import 'package:flutter_origin/presentation/news/bloc/news_page_state.dart';
+import 'package:flutter_origin/presentation/news/views/article_widget.dart';
 import 'package:flutter_origin/main.dart';
 
 class NewsPage extends StatelessWidget {

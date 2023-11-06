@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_origin/core/resources/data_state.dart';
-import 'package:flutter_origin/features/daily_news/domain/repository/article_repository.dart';
-import 'package:flutter_origin/features/daily_news/presentation/news/bloc/news_page_event.dart';
-import 'package:flutter_origin/features/daily_news/presentation/news/bloc/news_page_state.dart';
+import 'package:flutter_origin/data/repository/news/article_repository.dart';
+import 'package:flutter_origin/presentation/news/bloc/news_page_event.dart';
+import 'package:flutter_origin/presentation/news/bloc/news_page_state.dart';
 
 class NewsPageBloc extends Bloc<NewsPageEvent, NewsPageState> {
   final ArticleRepository _articleRepository;

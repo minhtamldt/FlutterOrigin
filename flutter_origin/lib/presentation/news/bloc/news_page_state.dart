@@ -2,7 +2,7 @@
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 
-import 'package:flutter_origin/features/daily_news/domain/entities/article.dart';
+import 'package:flutter_origin/data/repository/news/models/article.dart';
 
 abstract class NewsPageState extends Equatable {
   final List<ArticleEntity>? articles;

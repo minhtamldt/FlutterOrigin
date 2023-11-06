@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter_origin/core/constants/constants.dart';
 import 'package:flutter_origin/core/resources/data_state.dart';
-import 'package:flutter_origin/features/daily_news/data/data_sources/remote/news_api_service.dart';
-import 'package:flutter_origin/features/daily_news/data/models/article_mode.dart';
-import 'package:flutter_origin/features/daily_news/domain/repository/article_repository.dart';
+import 'package:flutter_origin/data/data_provider/services/remote/news/news_api_service.dart';
+import 'package:flutter_origin/data/data_provider/services/remote/news/dto/article_dto.dart';
+import 'package:flutter_origin/data/repository/news/article_repository.dart';
 
 class ArticleRepositoryImpl extends ArticleRepository {
   final NewsApiService newsApiService;
@@ -13,7 +13,7 @@ class ArticleRepositoryImpl extends ArticleRepository {
   ArticleRepositoryImpl(this.newsApiService);
 
   @override
-  Future<DataState<List<ArticleModel>>> getNewsArticles() async {
+  Future<DataState<List<ArticleDto>>> getNewsArticles() async {
     try {
       final httpResponse = await newsApiService.getNewsArticles(
           apiKey: newsAPIKey, country: countryQuery, category: categoryQuery);
