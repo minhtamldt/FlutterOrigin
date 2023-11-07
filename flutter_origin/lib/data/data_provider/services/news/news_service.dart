@@ -1,5 +1,3 @@
-
-
 import 'dart:async';
 
 import 'package:flutter_origin/core/constants/remote_constants.dart';
@@ -12,14 +10,12 @@ class NewsService {
   final RestApiService _restApiService;
   NewsService(this._restApiService);
 
-  Future<RestResponse<NewsResponseDto>> getNews({required String method, required NewRequestDto paramters}) async {
+  Future<RestResponse<NewsResponseDto>> getNews(
+      {required String method, required NewRequestDto paramters}) async {
     var response = await _restApiService.get<NewsResponseDto, NewRequestDto>(
-     fromJson: (data) => NewsResponseDto.fromJson(data),
-     method: RemoteConstants.topHeadlines,
-     request:  NewRequestDto(
-       category: "business",
-     ),
-    );
+        fromJson: (data) => NewsResponseDto.fromJson(data),
+        method: RemoteConstants.topHeadlines,
+        request: paramters);
     return response;
   }
 }

@@ -1,4 +1,3 @@
-
 import 'package:flutter_origin/core/constants/remote_constants.dart';
 import 'package:flutter_origin/data/data_provider/base_dto/rest_response.dart';
 import 'package:flutter_origin/data/data_provider/services/news/dto/request/news_request_dto.dart';
@@ -6,16 +5,17 @@ import 'package:flutter_origin/data/data_provider/services/news/dto/response/new
 import 'package:flutter_origin/data/data_provider/services/news/news_service.dart';
 import 'package:flutter_origin/data/repository/news/news_repository.dart';
 
-class ArticleRepositoryImpl extends ArticleRepository {
+class NewsRepositoryImpl extends NewsRepository {
   final NewsService newsApiService;
 
-  ArticleRepositoryImpl(this.newsApiService);
+  NewsRepositoryImpl(this.newsApiService);
 
   @override
-  Future<RestResponse<NewsResponseDto>> getNews() async {
+  Future<RestResponse<NewsResponseDto>> getTopHeadelinesNews() async {
     final rs = await newsApiService.getNews(
-          method: RemoteConstants.topHeadlines,
-          paramters: NewRequestDto(category: "business"));
-        return rs;
+        method: RemoteConstants.topHeadlines,
+        paramters: NewRequestDto(
+            category: "technology", country: "us", pageSize: 100));
+    return rs;
   }
 }

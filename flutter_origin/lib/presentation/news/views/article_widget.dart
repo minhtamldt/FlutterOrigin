@@ -1,5 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_origin/data/data_provider/services/news/dto/response/article_dto.dart';
 
@@ -28,7 +26,9 @@ class ArticleWidget extends StatelessWidget {
         height: MediaQuery.of(context).size.width / 2.2,
         child: Row(
           children: [
-            _buildImage(context),
+            // _buildImage(context),
+            _buildImage2(context),
+            const SizedBox(width: 10),
             _buildTitleAndDescription(),
             _buildRemovableArea(),
           ],
@@ -37,52 +37,68 @@ class ArticleWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildImage(BuildContext context) {
-    return CachedNetworkImage(
-        imageUrl: article!.urlToImage ??  '',
-        imageBuilder: (context, imageProvider) => Padding(
-              padding: const EdgeInsetsDirectional.only(end: 14),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 3,
-                  height: double.maxFinite,
-                  decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.08),
-                      image: DecorationImage(
-                          image: imageProvider, fit: BoxFit.cover)),
-                ),
-              ),
-            ),
-        progressIndicatorBuilder: (context, url, downloadProgress) => Padding(
-              padding: const EdgeInsetsDirectional.only(end: 14),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 3,
-                  height: double.maxFinite,
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.08),
-                  ),
-                  child: const CupertinoActivityIndicator(),
-                ),
-              ),
-            ),
-        errorWidget: (context, url, error) => Padding(
-              padding: const EdgeInsetsDirectional.only(end: 14),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width / 3,
-                  height: double.maxFinite,
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.08),
-                  ),
-                  child: const Icon(Icons.error),
-                ),
-              ),
-            ));
+  _buildImage2(context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20.0),
+      child: Container(
+        width: MediaQuery.of(context).size.width / 3,
+        height: double.maxFinite,
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.08),
+        ),
+        child: article!.urlToImage!.isNotEmpty
+            ? Image.network(article!.urlToImage!, fit: BoxFit.cover)
+            : const Icon(Icons.error),
+      ),
+    );
   }
+
+  // Widget _buildImage(BuildContext context) {
+  //   return CachedNetworkImage(
+  //       imageUrl: article!.urlToImage ?? '',
+  //       imageBuilder: (context, imageProvider) => Padding(
+  //             padding: const EdgeInsetsDirectional.only(end: 14),
+  //             child: ClipRRect(
+  //               borderRadius: BorderRadius.circular(20.0),
+  //               child: Container(
+  //                 width: MediaQuery.of(context).size.width / 3,
+  //                 height: double.maxFinite,
+  //                 decoration: BoxDecoration(
+  //                     color: Colors.black.withOpacity(0.08),
+  //                     image: DecorationImage(
+  //                         image: imageProvider, fit: BoxFit.cover)),
+  //               ),
+  //             ),
+  //           ),
+  //       progressIndicatorBuilder: (context, url, downloadProgress) => Padding(
+  //             padding: const EdgeInsetsDirectional.only(end: 14),
+  //             child: ClipRRect(
+  //               borderRadius: BorderRadius.circular(20.0),
+  //               child: Container(
+  //                 width: MediaQuery.of(context).size.width / 3,
+  //                 height: double.maxFinite,
+  //                 decoration: BoxDecoration(
+  //                   color: Colors.black.withOpacity(0.08),
+  //                 ),
+  //                 child: const CupertinoActivityIndicator(),
+  //               ),
+  //             ),
+  //           ),
+  //       errorWidget: (context, url, error) => Padding(
+  //             padding: const EdgeInsetsDirectional.only(end: 14),
+  //             child: ClipRRect(
+  //               borderRadius: BorderRadius.circular(20.0),
+  //               child: Container(
+  //                 width: MediaQuery.of(context).size.width / 3,
+  //                 height: double.maxFinite,
+  //                 decoration: BoxDecoration(
+  //                   color: Colors.black.withOpacity(0.08),
+  //                 ),
+  //                 child: const Icon(Icons.error),
+  //               ),
+  //             ),
+  //           ));
+  // }
 
   Widget _buildTitleAndDescription() {
     return Expanded(

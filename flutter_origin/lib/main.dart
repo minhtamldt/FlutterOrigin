@@ -13,12 +13,11 @@ final getIt = GetIt.instance;
 
 Future<void> initializeDependencies() async {
   getIt.registerSingleton<Dio>(Dio());
-  getIt.registerSingleton<RestApiService>(RestApiService(getIt(),RemoteConstants.newsAPIBaseURL));
+  getIt.registerSingleton<RestApiService>(
+      RestApiService(getIt(), RemoteConstants.newsAPIBaseURL));
   getIt.registerSingleton<NewsService>(NewsService(getIt()));
-  getIt.registerSingleton<ArticleRepository>(ArticleRepositoryImpl(getIt()));
+  getIt.registerSingleton<NewsRepository>(NewsRepositoryImpl(getIt()));
   getIt.registerFactory<NewsPageBloc>(() => NewsPageBloc(getIt()));
-
-  
 }
 
 void main() async {

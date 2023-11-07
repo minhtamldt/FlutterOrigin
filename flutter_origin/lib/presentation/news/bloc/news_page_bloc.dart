@@ -5,7 +5,7 @@ import 'package:flutter_origin/presentation/news/bloc/news_page_event.dart';
 import 'package:flutter_origin/presentation/news/bloc/news_page_state.dart';
 
 class NewsPageBloc extends Bloc<NewsPageEvent, NewsPageState> {
-  final ArticleRepository _articleRepository;
+  final NewsRepository _articleRepository;
 
   NewsPageBloc(this._articleRepository) : super(const NewsPageLoading()) {
     on<GetArticlesEvent>(onGetArticles);
@@ -13,10 +13,9 @@ class NewsPageBloc extends Bloc<NewsPageEvent, NewsPageState> {
 
   void onGetArticles(
       GetArticlesEvent event, Emitter<NewsPageState> emit) async {
-    final rs = await _articleRepository.getNews();
+    final rs = await _articleRepository.getTopHeadelinesNews();
 
-    switch(rs.status)
-    {
+    switch (rs.status) {
       case ResponseStatus.success:
         emit(NewsPageDone(rs.data!.articles!));
         break;

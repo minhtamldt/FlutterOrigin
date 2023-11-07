@@ -43,15 +43,17 @@ class NewsPage extends StatelessWidget {
       }
 
       if (state is NewsPageDone) {
-        return ListView.builder(
-          itemBuilder: (context, index) {
-            return ArticleWidget(
-              article: state.articles![index],
-              // onArticlePressed: (article) => print(article),
-              // _onArticlePressed(context, article),
-            );
-          },
-          itemCount: state.articles!.length,
+        return Scrollbar(
+          child: ListView.builder(
+            itemBuilder: (context, index) {
+              return ArticleWidget(
+                article: state.articles![index],
+                // onArticlePressed: (article) => print(article),
+                // _onArticlePressed(context, article),
+              );
+            },
+            itemCount: state.articles!.length,
+          ),
         );
       }
       return const SizedBox();
