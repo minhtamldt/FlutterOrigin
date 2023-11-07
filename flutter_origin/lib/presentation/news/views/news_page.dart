@@ -1,11 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_origin/presentation/home/views/home_page.dart';
 import 'package:flutter_origin/presentation/news/bloc/news_page_bloc.dart';
 import 'package:flutter_origin/presentation/news/bloc/news_page_event.dart';
 import 'package:flutter_origin/presentation/news/bloc/news_page_state.dart';
 import 'package:flutter_origin/presentation/news/views/article_widget.dart';
 import 'package:flutter_origin/main.dart';
 
+@RoutePage()
 class NewsPage extends StatelessWidget {
   const NewsPage({super.key});
 
@@ -14,7 +17,6 @@ class NewsPage extends StatelessWidget {
     return BlocProvider<NewsPageBloc>(
       create: (context) => getIt()..add(const GetArticlesEvent()),
       child: Scaffold(
-        appBar: _buildAppBar(),
         body: _buildBody(),
       ),
     );
@@ -23,6 +25,14 @@ class NewsPage extends StatelessWidget {
   _buildAppBar() {
     return AppBar(
       title: const Text('Daily News'),
+      leading: Builder(builder: (context) {
+        return IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
+        );
+      }),
       actions: [
         IconButton(
           icon: const Icon(Icons.search),
