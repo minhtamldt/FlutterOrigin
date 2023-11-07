@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
     return BlocProvider<LoginPageBloc>(
         create: (context) => widget.bloc,
         child: Scaffold(
-          body: SafeArea(child: _buildBody()),
+          body: _buildBody(),
         ));
   }
 
@@ -49,73 +49,77 @@ class _LoginPageState extends State<LoginPage> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           )),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-              flex: 5,
-              child: SizedBox(
-                  width: 200,
-                  height: 200,
-                  child: Image.asset("assets/images/flutter.png"))),
-          const Text(
-            "Hello, Flutter!",
-            style: TextStyle(
-                fontSize: 30, fontWeight: FontWeight.bold, color: Colors.blue),
-          ),
-          const SizedBox(height: 20),
-          Container(
-            padding: const EdgeInsets.only(left: 50, right: 50),
-            child: _buildUserName(),
-          ),
-          const SizedBox(height: 10),
-          Container(
-            padding: const EdgeInsets.only(left: 50, right: 50),
-            child: _buildPassword(),
-          ),
-          const SizedBox(height: 10),
-          SizedBox(
-            height: 50,
-            width: 200,
-            child: BlocListener<LoginPageBloc, LoginState>(
-                listener: (context, state) {
-                  if (state is SuccessLoginState) {
-                    AutoRouter.of(context)
-                        .replaceNamed(RouterConstants.homeTabbedPage);
-                  }
-                },
-                child: ElevatedButton(
-                  onPressed: () async {
-                    SubmitedLoginEvent event = SubmitedLoginEvent(
-                        userName: _userCtl.text, password: _passwordCtl.text);
-                    widget.bloc.add(event);
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                      side: const BorderSide(color: Colors.blue, width: 2.0),
-                    ),
-                  ),
-                  child: const Text(
-                    'Login',
-                    style: TextStyle(color: Colors.blue),
-                  ),
-                )),
-          ),
-          Expanded(
-            flex: 5,
-            child: Container(
-              color: Colors.transparent,
+      child: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+                flex: 5,
+                child: SizedBox(
+                    width: 200,
+                    height: 200,
+                    child: Image.asset("assets/images/flutter.png"))),
+            const Text(
+              "Hello, Flutter!",
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue),
             ),
-          ),
-          const Text(
-            "Welcome to Flutter Multi-platform App UI",
-            style: TextStyle(color: Colors.white),
-          ),
-          const SizedBox(height: 10),
-        ],
+            const SizedBox(height: 20),
+            Container(
+              padding: const EdgeInsets.only(left: 50, right: 50),
+              child: _buildUserName(),
+            ),
+            const SizedBox(height: 10),
+            Container(
+              padding: const EdgeInsets.only(left: 50, right: 50),
+              child: _buildPassword(),
+            ),
+            const SizedBox(height: 10),
+            SizedBox(
+              height: 50,
+              width: 200,
+              child: BlocListener<LoginPageBloc, LoginState>(
+                  listener: (context, state) {
+                    if (state is SuccessLoginState) {
+                      AutoRouter.of(context)
+                          .replaceNamed(RouterConstants.homeTabbedPage);
+                    }
+                  },
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      SubmitedLoginEvent event = SubmitedLoginEvent(
+                          userName: _userCtl.text, password: _passwordCtl.text);
+                      widget.bloc.add(event);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                        side: const BorderSide(color: Colors.blue, width: 2.0),
+                      ),
+                    ),
+                    child: const Text(
+                      'Login',
+                      style: TextStyle(color: Colors.blue),
+                    ),
+                  )),
+            ),
+            Expanded(
+              flex: 5,
+              child: Container(
+                color: Colors.transparent,
+              ),
+            ),
+            const Text(
+              "Welcome to Flutter Multi-platform App UI",
+              style: TextStyle(color: Colors.white),
+            ),
+            const SizedBox(height: 10),
+          ],
+        ),
       ),
     );
   }

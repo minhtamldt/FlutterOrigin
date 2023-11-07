@@ -13,6 +13,7 @@ class HomePage extends StatelessWidget {
       drawerEnableOpenDragGesture: false,
       routes: const [
         NewsRoute(),
+        FavouriteRoute(),
         SettingRoute(),
       ],
       transitionBuilder: (context, child, animation) {
@@ -21,18 +22,18 @@ class HomePage extends StatelessWidget {
           child: child,
         );
       },
-      appBarBuilder: (context, tabsRouter) {
-        return AppBar(
-          leading: Builder(builder: (context) {
-            return IconButton(
-              icon: const Icon(Icons.menu),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            );
-          }),
-        );
-      },
+      // appBarBuilder: (context, tabsRouter) {
+      //   return AppBar(
+      //     leading: Builder(builder: (context) {
+      //       return IconButton(
+      //         icon: const Icon(Icons.menu),
+      //         onPressed: () {
+      //           Scaffold.of(context).openDrawer();
+      //         },
+      //       );
+      //     }),
+      //   );
+      // },
       bottomNavigationBuilder: (context, tabsRouter) {
         return BottomNavigationBar(
           currentIndex: tabsRouter.activeIndex,
@@ -42,6 +43,8 @@ class HomePage extends StatelessWidget {
           },
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: "News"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.favorite), label: "Favourite"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.settings), label: "Settings"),
           ],

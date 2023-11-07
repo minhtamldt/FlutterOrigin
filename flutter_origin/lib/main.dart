@@ -29,8 +29,8 @@ Future<void> initializeDependencies() async {
 
   //Register Bloc
   getIt.registerFactory<NewsPageBloc>(() => NewsPageBloc(getIt()));
-  getIt.registerFactory<LoginPageBloc>(
-      () => LoginPageBloc(const LoginState(userName: "", password: "")));
+  getIt.registerFactory<LoginPageBloc>(() => LoginPageBloc(
+      const LoginState(userName: "helloflutter", password: "123456Aa@!")));
   getIt.registerFactory<SettingPageBloc>(
       () => SettingPageBloc(SettingPageState()));
   getIt.registerFactory<NewsDetailPageBloc>(

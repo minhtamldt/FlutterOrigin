@@ -26,9 +26,13 @@ class AppRouter extends $AppRouter {
                 ),
                 AutoRoute(
                   path: RouterConstants.detailNewsPage,
-                  page: NewsRoute.page,
+                  page: NewsDetailRoute.page,
                 ),
               ],
+            ),
+            AutoRoute(
+              path: RouterConstants.favouritePage,
+              page: FavouriteRoute.page,
             ),
             AutoRoute(
               path: RouterConstants.settingPage,
