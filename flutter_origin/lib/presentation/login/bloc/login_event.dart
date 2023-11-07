@@ -19,3 +19,13 @@ class PasswordChanged extends LoginEvent {
   @override
   List<Object?> get props => [password];
 }
+
+class SubmitedLoginEvent extends LoginEvent {
+  final String? userName;
+  final String? password;
+
+  SubmitedLoginEvent({required this.userName, required this.password});
+
+  @override
+  List<Object?> get props => [userName, password];
+}

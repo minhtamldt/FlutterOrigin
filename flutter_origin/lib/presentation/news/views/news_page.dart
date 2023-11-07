@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_origin/presentation/home/views/home_page.dart';
 import 'package:flutter_origin/presentation/news/bloc/news_page_bloc.dart';
 import 'package:flutter_origin/presentation/news/bloc/news_page_event.dart';
 import 'package:flutter_origin/presentation/news/bloc/news_page_state.dart';
