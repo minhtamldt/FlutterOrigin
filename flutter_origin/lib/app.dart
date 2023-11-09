@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_origin/presentations/main/main_page.dart';
+import 'package:flutter_origin/presentation/counter/counter_page.dart';
 
 class OriginApp extends StatelessWidget {
   const OriginApp({super.key});
@@ -28,7 +28,7 @@ class OriginApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MainPage(title: 'Flutter Demo Home Page'),
+      home: const CounterPage(title: 'Flutter Demo Home Page'),
     );
   }
 }
