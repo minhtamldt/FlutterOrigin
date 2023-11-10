@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_origin/presentation/counter/counter_page.dart';
+import 'package:flutter_origin/config/routers/app_router.dart';
+import 'package:flutter_origin/injection_register.dart';
 
 class OriginApp extends StatelessWidget {
   const OriginApp({super.key});
@@ -7,7 +8,9 @@ class OriginApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: InjectionRegister.instance.get<AppRouter>().config(),
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -28,7 +31,6 @@ class OriginApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const CounterPage(title: 'Flutter Demo Home Page'),
     );
   }
 }
