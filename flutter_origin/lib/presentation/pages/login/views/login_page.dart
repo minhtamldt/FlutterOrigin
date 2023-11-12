@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_origin/config/multi_language/multi_languages.dart';
 import 'package:flutter_origin/core/base/widgets/page_widget.dart';
 import 'package:flutter_origin/presentation/pages/login/bloc/login_page_bloc.dart';
 import 'package:flutter_origin/presentation/pages/login/bloc/login_page_state.dart';
@@ -22,18 +23,41 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('Login Page'),
-            const SizedBox(
-              height: 20,
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  // context.read<LoginPageBloc>().add(LoginPageEvent());
-                },
-                child: const Text('Login'))
+           _buidLogo(),
+           _buildEmailField(),
           ],
         ),
       );
     }));
+  }
+  
+  _buidLogo() {
+    return Column(
+      children: <Widget>[
+        Image.asset(
+          'assets/images/news_logo.png',
+        ),
+          const SizedBox(
+          height: 20,
+        ),
+        Text(MultiLanguages.of(context).translate("login"), style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)
+      ],
+    );
+  }
+  
+  _buildEmailField() {
+    return Column(
+      children: <Widget>[
+        Text(MultiLanguages.of(context).translate("login")),
+        const SizedBox(
+          height: 10,
+        ),
+        TextFormField(
+          decoration: const InputDecoration(
+            hintText: 'Email',
+            border: OutlineInputBorder(),
+          ),
+        ),],
+    );
   }
 }
