@@ -21,54 +21,44 @@ class _LoginPageState extends State<LoginPage> {
         BlocBuilder<LoginPageBloc, LoginPageState>(builder: (context, state) {
       return Center(
         child: Padding(
-          padding: const EdgeInsets.all(46),
+          padding: const EdgeInsets.only(left: 46, right: 46),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              _buildLogo(context),
-              const SizedBox(
-                height: 50,
-              ),
-              _buildUserName(context),
-              const SizedBox(
-                height: 20,
-              ),
-              _buildPassword(context),
-              const SizedBox(
-                height: 20,
-              ),
-              _buildButtonLogin(context),
-              const SizedBox(
-                height: 20,
-              ),
-              _buildSigninwith(context),
-              const SizedBox(
-                height: 50,
-              ),
-              _buildSocialView(),
-              const SizedBox(
-                height: 50,
-              ),
-              GestureDetector(
-                  onTap: () {
-                    // context.router.pushNamed('/home');
-                  },
-                  child: RichText(
-                      text: TextSpan(
-                          text: AppLocalizations.of(context)!.noAccount,
-                          style: const TextStyle(color: Colors.black),
-                          children: [
-                        TextSpan(
-                            text: AppLocalizations.of(context)!.register,
-                            style: const TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold))
-                      ]))),
+              Expanded(flex: 30, child: _buildLogo(context)),
+              Expanded(flex: 15, child: _buildUserName(context)),
+              Expanded(flex: 15, child: _buildPassword(context)),
+              Expanded(
+                  flex: 0,
+                  child: Container(
+                    color: Colors.pink,
+                  )),
+              Expanded(flex: 10, child: _buildButtonLogin(context)),
+              Expanded(flex: 10, child: _buildSigninwith(context)),
+              Expanded(flex: 10, child: _buildSocialView()),
+              Expanded(flex: 10, child: _buildRegister(context)),
             ],
           ),
         ),
       );
     }));
+  }
+
+  GestureDetector _buildRegister(BuildContext context) {
+    return GestureDetector(
+        onTap: () {
+          // context.router.pushNamed('/home');
+        },
+        child: RichText(
+            text: TextSpan(
+                text: AppLocalizations.of(context)!.noAccount,
+                style: const TextStyle(color: Colors.black),
+                children: [
+              TextSpan(
+                  text: AppLocalizations.of(context)!.register,
+                  style: const TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold))
+            ])));
   }
 
   Row _buildSocialView() {
@@ -118,26 +108,32 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  SizedBox _buildButtonLogin(BuildContext context) {
-    return SizedBox(
-      width: 150,
-      height: 40,
-      child: ElevatedButton(
-          onPressed: () {},
-          style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ))),
-          child: SizedBox(child: Text(AppLocalizations.of(context)!.loign))),
+  Center _buildButtonLogin(BuildContext context) {
+    return Center(
+      child: SizedBox(
+        width: 150,
+        height: 40,
+        child: ElevatedButton(
+            onPressed: () {},
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ))),
+            child: SizedBox(child: Text(AppLocalizations.of(context)!.loign))),
+      ),
     );
   }
 
   _buildLogo(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Image.asset("assets/images/news_logo.png"),
+        const SizedBox(
+          height: 10,
+        ),
         Text(
           AppLocalizations.of(context)!.appName,
           style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),

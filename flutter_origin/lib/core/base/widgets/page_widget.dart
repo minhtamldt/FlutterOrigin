@@ -21,6 +21,7 @@ class _PageWidgetState<B extends BaseBloc> extends State<PageWidget> {
   Widget build(BuildContext context) {
     B bloc = InjectionRegister.instance.get<B>();
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: SafeArea(
             child: BlocProvider<B>(
                 create: (context) => bloc,
