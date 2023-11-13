@@ -22,7 +22,12 @@ class _PageWidgetState<B extends BaseBloc> extends State<PageWidget> {
     B bloc = InjectionRegister.instance.get<B>();
     return Scaffold(
         body: SafeArea(
-      child: BlocProvider<B>(create: (context) => bloc, child: widget.child!),
-    ));
+            child: BlocProvider<B>(
+                create: (context) => bloc,
+                child: Localizations.override(
+                  context: context,
+                  locale: const Locale('vi'),
+                  child: widget.child!,
+                ))));
   }
 }
