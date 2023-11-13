@@ -11,7 +11,7 @@
             }
         }
     },
-    "nWombats": "{count, plural, =0{no wombats} =1{1 wombat zz} other{{count} wombats}}",
+    "nWombats": "nWombats {count, plural, =0{no wombats} =1{1 wombat zz} other{{count} wombats}}",
     "@nWombats": {
         "description": "A plural message",
         "placeholders": {
