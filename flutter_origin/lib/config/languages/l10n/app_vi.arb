@@ -1,4 +1,13 @@
 {
     "@@locale": "vi",
-    "loign": "Đăng nhập"
+    "loign": "Đăng nhập",
+    "appName": "News 24",
+    "userName": "Tên tài khoản",
+    "password": "Mật khẩu",
+    "email": "Email",
+    "forgotPassword": "Quên mật khẩu",
+    "register": "Đăng ký",
+    "signIn": "Đăng nhập",
+    "signInWith": "Hoặc Đăng nhập với",
+    "noAccount": "Chưa có tài khoản?"
 }

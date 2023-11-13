@@ -1,4 +1,13 @@
 {
     "@@locale": "en",
-    "loign": "Login"
+    "loign": "Login",
+    "appName": "News 24",
+    "userName": "Username",
+    "password": "Password",
+    "email": "Email",
+    "forgotPassword": "Forgot password?",
+    "register": "Register",
+    "signIn": "Login",
+    "signInWith": "Or sign in with",
+    "noAccount": "Don`t have an account?"
 }
