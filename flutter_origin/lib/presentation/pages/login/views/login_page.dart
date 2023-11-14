@@ -26,18 +26,16 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Expanded(flex: 30, child: _buildLogo(context)),
-            Expanded(flex: 15, child: _buildUserName(context)),
-            Expanded(flex: 15, child: _buildPassword(context)),
-            Expanded(
-                flex: 0,
-                child: Container(
-                  color: Colors.pink,
-                )),
-            Expanded(flex: 10, child: _buildButtonLogin(context)),
-            Expanded(flex: 10, child: _buildSigninwith(context)),
-            Expanded(flex: 10, child: _buildSocialView()),
-            Expanded(flex: 10, child: _buildRegister(context)),
+            Expanded(flex: 40, child: _buildLogo(context)),
+            _buildUserName(context),
+            const SizedBox(
+              height: 10,
+            ),
+            _buildPassword(context),
+            Expanded(flex: 15, child: _buildButtonLogin(context)),
+            Expanded(flex: 15, child: _buildSigninwith(context)),
+            Expanded(flex: 15, child: _buildSocialView()),
+            Expanded(flex: 15, child: _buildRegister(context)),
           ],
         ),
       ),
@@ -77,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
           onTap: () {},
           child: Image.asset('assets/images/ic_facebook.png'),
         ),
-        GestureDetector(
+        InkWell(
           onTap: () {},
           child: Image.asset('assets/images/ic_apple.png'),
         ),
@@ -108,25 +106,29 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Center _buildButtonLogin(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        width: 150,
-        height: 40,
-        child: ElevatedButton(
-            onPressed: () {
-              AutoRouter.of(context)
-                  .pushNamed(RouterContants.forgotPasswordPage);
-            },
-            style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ))),
-            child: SizedBox(child: Text(AppLocalizations.of(context)!.loign))),
-      ),
-    );
+  _buildButtonLogin(BuildContext context) {
+    return Builder(builder: (context) {
+      return Center(
+        child: SizedBox(
+          width: 150,
+          height: 40,
+          child: ElevatedButton(
+              onPressed: () {
+                AutoRouter.of(context)
+                    .pushNamed(RouterContants.forgotPasswordPage);
+              },
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.black),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ))),
+              child:
+                  SizedBox(child: Text(AppLocalizations.of(context)!.loign))),
+        ),
+      );
+    });
   }
 
   _buildLogo(BuildContext context) {
@@ -174,10 +176,8 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Visibility(
               visible: state.userNameError == UserNameErrorType.invalid,
-              child: FittedBox(
-                child: Text(AppLocalizations.of(context)!.userNameError,
-                    style: const TextStyle(color: Colors.red, fontSize: 12)),
-              ),
+              child: Text(AppLocalizations.of(context)!.userNameError,
+                  style: const TextStyle(color: Colors.red, fontSize: 12)),
             )
           ],
         );
@@ -189,7 +189,8 @@ class _LoginPageState extends State<LoginPage> {
   _buildPassword(BuildContext context) {
     return BlocBuilder<LoginPageBloc, LoginPageState>(
       buildWhen: (previous, current) {
-        return current.isHidePassword != previous.isHidePassword;
+        return current.password != previous.password ||
+            current.isHidePassword != previous.isHidePassword;
       },
       builder: (context, state) {
         var bloc = PageWidget.of<LoginPageBloc>(context);
@@ -209,6 +210,11 @@ class _LoginPageState extends State<LoginPage> {
                     TextField(
                       controller: _passwordController,
                       obscureText: state.isHidePassword!,
+                      decoration: const InputDecoration(
+                          contentPadding: EdgeInsets.only(right: 25)),
+                      onChanged: (value) {
+                        bloc.add(PasswordChanged(password: value));
+                      },
                     ),
                     Align(
                         alignment: Alignment.centerRight,
@@ -225,19 +231,17 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(
               height: 10,
             ),
+            Visibility(
+              visible: state.passwordError != PasswordErrorType.valid,
+              child: Text(AppLocalizations.of(context)!.passwordErrorLenght,
+                  style: const TextStyle(color: Colors.red, fontSize: 12)),
+            ),
             GestureDetector(
               onTap: () {},
               child: Align(
                   alignment: Alignment.centerRight,
                   child: Text(AppLocalizations.of(context)!.forgotPassword)),
             ),
-            Visibility(
-              visible: state.passwordError != PasswordErrorType.valid,
-              child: FittedBox(
-                child: Text(AppLocalizations.of(context)!.passwordErrorLenght,
-                    style: const TextStyle(color: Colors.red, fontSize: 12)),
-              ),
-            )
           ],
         );
       },

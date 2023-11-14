@@ -21,7 +21,7 @@ class LoginPageBloc extends BaseBloc<LoginPageEvent, LoginPageState> {
       PasswordChanged event, Emitter<LoginPageState> emit) {
     var errorPassword = _validatePassword(event.password!);
     emit(
-        state.copyWith(passwordError: errorPassword, userName: event.password));
+        state.copyWith(passwordError: errorPassword, password: event.password));
   }
 
   FutureOr<void> _onUsernameChanged(

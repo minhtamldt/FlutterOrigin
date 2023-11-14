@@ -10,7 +10,7 @@
     "signIn": "Đăng nhập",
     "signInWith": "Hoặc Đăng nhập với",
     "noAccount": "Chưa có tài khoản?",
-    "userNameError": "Username nên là kí tứ và số, và có độ dài từ 3 đến 20 kí tự",
+    "userNameError": "Tên tài khoản phải là kí tự hoặc sô, và có độ dài từ 3 đến 20 kí tự",
     "passwordErrorLenght": "Độ dài nên được từ 8 đến 20 kí tự",
-    "passwordErrorNumber": "Password phải có ít nhất một số"
+    "passwordErrorNumber": "Mật khẩu phải có ít nhất một số"
 }
