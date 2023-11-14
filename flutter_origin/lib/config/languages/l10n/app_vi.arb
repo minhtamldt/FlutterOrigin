@@ -12,5 +12,6 @@
     "noAccount": "Chưa có tài khoản?",
     "userNameError": "Tên tài khoản phải là kí tự hoặc sô, và có độ dài từ 3 đến 20 kí tự",
     "passwordErrorLenght": "Độ dài nên được từ 8 đến 20 kí tự",
-    "passwordErrorNumber": "Mật khẩu phải có ít nhất một số"
+    "passwordErrorNumber": "Mật khẩu phải có ít nhất 1 số",
+    "featureNotAvaiable": "Tính năng chưa phát triển"
 }

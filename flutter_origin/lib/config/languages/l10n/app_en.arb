@@ -12,5 +12,6 @@
     "noAccount": "Don`t have an account?",
     "userNameError": "It should consist of letters, numbers, and underscores, and be between 3 and 20 characters",
     "passwordErrorLenght": "Invalid password length. It should be between 8 and 20 characters.",
-    "passwordErrorNumber": "Invalid password. It should contain at least one letter and one number."
+    "passwordErrorNumber": "Invalid password. It should contain at least one letter and one number.",
+    "featureNotAvaiable": "Feature not available"
 }

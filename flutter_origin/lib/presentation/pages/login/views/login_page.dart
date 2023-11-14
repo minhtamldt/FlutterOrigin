@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
               _buildPassword(context),
               Expanded(flex: 15, child: _buildButtonLogin(context)),
               Expanded(flex: 15, child: _buildSigninwith(context)),
-              Expanded(flex: 15, child: _buildSocialView()),
+              Expanded(flex: 15, child: _buildSocialView(context)),
               Expanded(flex: 15, child: _buildRegister(context)),
             ],
           ),
@@ -61,24 +61,52 @@ class _LoginPageState extends State<LoginPage> {
             ])));
   }
 
-  Row _buildSocialView() {
+  Row _buildSocialView(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         InkWell(
-          onTap: () {},
+          onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(AppLocalizations.of(context)!.featureNotAvaiable),
+                duration: const Duration(seconds: 1),
+              ),
+            );
+          },
           child: Image.asset('assets/images/ic_email.png'),
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(AppLocalizations.of(context)!.featureNotAvaiable),
+                duration: const Duration(seconds: 1),
+              ),
+            );
+          },
           child: Image.asset('assets/images/ic_google.png'),
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(AppLocalizations.of(context)!.featureNotAvaiable),
+                duration: const Duration(seconds: 1),
+              ),
+            );
+          },
           child: Image.asset('assets/images/ic_facebook.png'),
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(AppLocalizations.of(context)!.featureNotAvaiable),
+                duration: const Duration(seconds: 1),
+              ),
+            );
+          },
           child: Image.asset('assets/images/ic_apple.png'),
         ),
       ],
