@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_origin/core/base/bloc/base_bloc.dart';
+import 'package:flutter_origin/core/base/widgets/base_stateful_widget.dart';
 import 'package:flutter_origin/injection_register.dart';
 
-class PageWidget<B extends BaseBloc> extends StatefulWidget {
+class PageWidget<B extends BaseBloc> extends BaseStatefulWidget {
   final Widget? child;
 
   const PageWidget({super.key, required this.child});
@@ -16,7 +17,8 @@ class PageWidget<B extends BaseBloc> extends StatefulWidget {
   }
 }
 
-class _PageWidgetState<B extends BaseBloc> extends State<PageWidget> {
+class _PageWidgetState<B extends BaseBloc>
+    extends BaseStatefulWidgetState<PageWidget> {
   @override
   Widget build(BuildContext context) {
     B bloc = InjectionRegister.instance.get<B>();

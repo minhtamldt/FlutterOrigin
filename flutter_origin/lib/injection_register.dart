@@ -3,6 +3,8 @@ import 'package:flutter_origin/config/routers/app_router.dart';
 import 'package:flutter_origin/core/constants/api_contants.dart';
 import 'package:flutter_origin/data/data_provider/remote/rest_api.dart';
 import 'package:flutter_origin/data/data_provider/remote/rest_api_impl.dart';
+import 'package:flutter_origin/presentation/pages/forgot_password/bloc/forgot_password_page_bloc.dart';
+import 'package:flutter_origin/presentation/pages/forgot_password/bloc/forgot_password_page_state.dart';
 import 'package:flutter_origin/presentation/pages/login/bloc/login_page_bloc.dart';
 import 'package:flutter_origin/presentation/pages/login/bloc/login_page_state.dart';
 import 'package:get_it/get_it.dart';
@@ -22,5 +24,7 @@ class InjectionRegister {
     //Register Bloc:
     _getIt
         .registerFactory<LoginPageBloc>(() => LoginPageBloc(LoginPageState()));
+    _getIt.registerFactory<ForgotPasswordPageBloc>(
+        () => ForgotPasswordPageBloc(ForgotPasswordPageState()));
   }
 }

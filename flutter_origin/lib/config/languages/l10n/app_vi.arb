@@ -9,5 +9,8 @@
     "register": "Đăng ký",
     "signIn": "Đăng nhập",
     "signInWith": "Hoặc Đăng nhập với",
-    "noAccount": "Chưa có tài khoản?"
+    "noAccount": "Chưa có tài khoản?",
+    "userNameError": "Username nên là kí tứ và số, và có độ dài từ 3 đến 20 kí tự",
+    "passwordErrorLenght": "Độ dài nên được từ 8 đến 20 kí tự",
+    "passwordErrorNumber": "Password phải có ít nhất một số"
 }

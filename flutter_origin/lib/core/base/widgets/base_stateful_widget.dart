@@ -3,25 +3,24 @@ import 'package:flutter/material.dart';
 
 class BaseStatefulWidget extends StatefulWidget {
   final Widget? child;
-  BaseStatefulWidget({super.key, this.child}) {
-    debugPrint("---> ${DateTime.now()} - ${child.runtimeType} - CONTRUCTORS");
-  }
+  const BaseStatefulWidget({super.key, this.child});
 
   @override
   // ignore: no_logic_in_create_state
   State<BaseStatefulWidget> createState() {
     debugPrint("---> ${DateTime.now()} - ${child.runtimeType} - CREATE STATE");
-    return _BaseStatefulWidgetState();
+    return BaseStatefulWidgetState();
   }
 
   @override
   StatefulElement createElement() {
-    debugPrint("---> ${DateTime.now()} - ${child.runtimeType} - CREATE ELEMENT");
+    debugPrint(
+        "---> ${DateTime.now()} - ${child.runtimeType} - CREATE ELEMENT");
     return super.createElement();
   }
 }
 
-class _BaseStatefulWidgetState extends State<BaseStatefulWidget> {
+class BaseStatefulWidgetState<T extends BaseStatefulWidget> extends State<T> {
   @override
   void initState() {
     debugPrint("---> ${DateTime.now()} - ${widget.runtimeType} - INIT STATE");
@@ -48,19 +47,22 @@ class _BaseStatefulWidgetState extends State<BaseStatefulWidget> {
 
   @override
   void dispose() {
-    debugPrint("---> ${DateTime.now()} - ${widget.child.runtimeType} - DISPOSE");
+    debugPrint(
+        "---> ${DateTime.now()} - ${widget.child.runtimeType} - DISPOSE");
     super.dispose();
   }
 
   @override
-  void didUpdateWidget(covariant BaseStatefulWidget oldWidget) {
-    debugPrint("---> ${DateTime.now()} - ${widget.runtimeType} - DID UPDATED WIDGET");
+  void didUpdateWidget(covariant T oldWidget) {
+    debugPrint(
+        "---> ${DateTime.now()} - ${widget.runtimeType} - DID UPDATED WIDGET");
     super.didUpdateWidget(oldWidget);
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    debugPrint("---> ${DateTime.now()} - ${widget.runtimeType} - DEBUG FILL PROPERTIES -$properties");
+    debugPrint(
+        "---> ${DateTime.now()} - ${widget.runtimeType} - DEBUG FILL PROPERTIES -$properties");
     super.debugFillProperties(properties);
   }
 }
