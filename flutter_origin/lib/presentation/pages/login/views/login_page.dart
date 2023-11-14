@@ -19,27 +19,28 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return PageWidget<LoginPageBloc>(
-        child: Center(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 46, right: 46),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Expanded(flex: 40, child: _buildLogo(context)),
-            _buildUserName(context),
-            const SizedBox(
-              height: 10,
-            ),
-            _buildPassword(context),
-            Expanded(flex: 15, child: _buildButtonLogin(context)),
-            Expanded(flex: 15, child: _buildSigninwith(context)),
-            Expanded(flex: 15, child: _buildSocialView()),
-            Expanded(flex: 15, child: _buildRegister(context)),
-          ],
+    return PageWidget<LoginPageBloc>(child: Builder(builder: (context) {
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 46, right: 46),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Expanded(flex: 40, child: _buildLogo(context)),
+              _buildUserName(context),
+              const SizedBox(
+                height: 10,
+              ),
+              _buildPassword(context),
+              Expanded(flex: 15, child: _buildButtonLogin(context)),
+              Expanded(flex: 15, child: _buildSigninwith(context)),
+              Expanded(flex: 15, child: _buildSocialView()),
+              Expanded(flex: 15, child: _buildRegister(context)),
+            ],
+          ),
         ),
-      ),
-    ));
+      );
+    }));
   }
 
   GestureDetector _buildRegister(BuildContext context) {
@@ -52,6 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                 text: AppLocalizations.of(context)!.noAccount,
                 style: const TextStyle(color: Colors.black),
                 children: [
+              const TextSpan(text: " "),
               TextSpan(
                   text: AppLocalizations.of(context)!.register,
                   style: const TextStyle(
