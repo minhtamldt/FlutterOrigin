@@ -19,7 +19,7 @@ class _MyWidgetState extends State<TabMainPage> {
         useSafeArea: false,
         child: AutoTabsScaffold(
           routes: const [
-            HomeRoute(),
+            RouterHomeRoute(),
             SearchRoute(),
             BookmarkRoute(),
             SettingRoute(),

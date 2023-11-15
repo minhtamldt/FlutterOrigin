@@ -11,6 +11,10 @@ import 'package:flutter_origin/presentation/pages/home/bloc/home_page_bloc.dart'
 import 'package:flutter_origin/presentation/pages/home/bloc/home_page_state.dart';
 import 'package:flutter_origin/presentation/pages/login/bloc/login_page_bloc.dart';
 import 'package:flutter_origin/presentation/pages/login/bloc/login_page_state.dart';
+import 'package:flutter_origin/presentation/pages/news_detail/bloc/news_detail_page_bloc.dart';
+import 'package:flutter_origin/presentation/pages/news_detail/bloc/news_detail_page_state.dart';
+import 'package:flutter_origin/presentation/pages/notification/bloc/notification_page_bloc.dart';
+import 'package:flutter_origin/presentation/pages/notification/bloc/notification_page_state.dart';
 import 'package:flutter_origin/presentation/pages/search/bloc/search_page_bloc.dart';
 import 'package:flutter_origin/presentation/pages/search/bloc/search_page_state.dart';
 import 'package:flutter_origin/presentation/pages/setting/bloc/setting_page_bloc.dart';
@@ -49,5 +53,9 @@ class InjectionRegister {
         () => BookmarkPageBloc(BookmarkPageState()));
     _getIt.registerFactory<SettingPageBloc>(
         () => SettingPageBloc(SettingPageState()));
+    _getIt.registerFactory<NotificationPageBloc>(
+        () => NotificationPageBloc(NotificationPageState()));
+    _getIt.registerFactory<NewsDetailPageBloc>(
+        () => NewsDetailPageBloc(NewsDetailPageState()));
   }
 }

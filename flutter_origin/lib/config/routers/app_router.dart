@@ -24,10 +24,24 @@ class AppRouter extends $AppRouter {
           page: TabMainRoute.page,
           children: [
             AutoRoute(
-              initial: true,
-              path: RouterContants.homePage,
-              page: HomeRoute.page,
-            ),
+                initial: true,
+                path: RouterContants.routerHomePage,
+                page: RouterHomeRoute.page,
+                children: [
+                  AutoRoute(
+                    initial: true,
+                    path: RouterContants.homePage,
+                    page: HomeRoute.page,
+                  ),
+                  AutoRoute(
+                    path: RouterContants.newsDetailPage,
+                    page: NewsDetailRoute.page,
+                  ),
+                  AutoRoute(
+                    path: RouterContants.notificactionPage,
+                    page: NotificationRoute.page,
+                  ),
+                ]),
             AutoRoute(
               path: RouterContants.searchPage,
               page: SearchRoute.page,
