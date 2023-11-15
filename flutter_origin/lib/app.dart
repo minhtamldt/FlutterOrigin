@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_origin/config/routers/app_router.dart';
 import 'package:flutter_origin/config/themes/app_theme.dart';
+import 'package:flutter_origin/config/themes/dark_theme.dart';
 import 'package:flutter_origin/injection_register.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -18,6 +19,7 @@ class OriginApp extends StatelessWidget {
       routerConfig: InjectionRegister.instance.get<AppRouter>().config(),
       title: 'Flutter Demo',
       theme: AppTheme.themeData,
+      darkTheme: DarkTheme.themeData,
     );
   }
 }

@@ -144,15 +144,8 @@ class _LoginPageState extends State<LoginPage> {
           height: 40,
           child: ElevatedButton(
               onPressed: () {
-                AutoRouter.of(context).replaceNamed(RouterContants.tabMainPage);
+                AutoRouter.of(context).pushNamed(RouterContants.tabMainPage);
               },
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.black),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ))),
               child:
                   SizedBox(child: Text(AppLocalizations.of(context)!.loign))),
         ),

@@ -25,67 +25,60 @@ class _MyWidgetState extends State<TabMainPage> {
             SettingRoute(),
           ],
           bottomNavigationBuilder: (context, tabsRouter) {
-            return Theme(
-              data: ThemeData(
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-              ),
-              child: BottomNavigationBar(
-                type: BottomNavigationBarType.fixed,
-                currentIndex: tabsRouter.activeIndex,
-                selectedItemColor: Colors.blue,
-                onTap: tabsRouter.setActiveIndex,
-                items: [
-                  BottomNavigationBarItem(
-                      activeIcon: Image.asset(
-                        'assets/images/ic_home_black.png',
-                        width: 24,
-                        height: 24,
-                      ),
-                      icon: Image.asset(
-                        'assets/images/ic_home.png',
-                        width: 24,
-                        height: 24,
-                      ),
-                      label: ""),
-                  BottomNavigationBarItem(
-                      activeIcon: Image.asset(
-                        'assets/images/ic_search_black.png',
-                        width: 24,
-                        height: 24,
-                      ),
-                      icon: Image.asset(
-                        'assets/images/ic_search.png',
-                        width: 24,
-                        height: 24,
-                      ),
-                      label: ""),
-                  BottomNavigationBarItem(
-                      activeIcon: Image.asset(
-                        'assets/images/ic_bookmark_black.png',
-                        width: 24,
-                        height: 24,
-                      ),
-                      icon: Image.asset(
-                        'assets/images/ic_bookmark.png',
-                        width: 24,
-                        height: 24,
-                      ),
-                      label: ""),
-                  BottomNavigationBarItem(
-                      activeIcon: Image.asset(
-                        'assets/images/ic_setting_black.png',
-                        width: 24,
-                        height: 24,
-                      ),
-                      icon: Image.asset(
-                        'assets/images/ic_setting.png',
-                        width: 24,
-                        height: 24,
-                      ),
-                      label: ""),
-                ],
-              ),
+            return BottomNavigationBar(
+              currentIndex: tabsRouter.activeIndex,
+              selectedItemColor: const Color.fromARGB(255, 200, 201, 201),
+              onTap: tabsRouter.setActiveIndex,
+              items: [
+                BottomNavigationBarItem(
+                    activeIcon: Image.asset(
+                      'assets/images/ic_home_black.png',
+                      width: 24,
+                      height: 24,
+                    ),
+                    icon: Image.asset(
+                      'assets/images/ic_home.png',
+                      width: 24,
+                      height: 24,
+                    ),
+                    label: ""),
+                BottomNavigationBarItem(
+                    activeIcon: Image.asset(
+                      'assets/images/ic_search_black.png',
+                      width: 24,
+                      height: 24,
+                    ),
+                    icon: Image.asset(
+                      'assets/images/ic_search.png',
+                      width: 24,
+                      height: 24,
+                    ),
+                    label: ""),
+                BottomNavigationBarItem(
+                    activeIcon: Image.asset(
+                      'assets/images/ic_bookmark_black.png',
+                      width: 24,
+                      height: 24,
+                    ),
+                    icon: Image.asset(
+                      'assets/images/ic_bookmark.png',
+                      width: 24,
+                      height: 24,
+                    ),
+                    label: ""),
+                BottomNavigationBarItem(
+                    activeIcon: Image.asset(
+                      'assets/images/ic_setting_black.png',
+                      width: 24,
+                      height: 24,
+                    ),
+                    icon: Image.asset(
+                      'assets/images/ic_setting.png',
+                      width: 24,
+                      height: 24,
+                    ),
+                    label: ""),
+              ],
             );
           },
         ));

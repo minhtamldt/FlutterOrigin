@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppTheme {
+class DarkTheme {
   static final ThemeData themeData = ThemeData(
     // applyElevationOverlayColor: false,
     // cupertinoOverrideTheme: const CupertinoThemeData(
@@ -47,7 +47,7 @@ class AppTheme {
     // primaryColorDark: Colors.blue,
     // primaryColorLight: Colors.blue,
     // primarySwatch: Colors.blue,
-    // scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: const Color.fromARGB(255, 26, 26, 26),
     // secondaryHeaderColor: Colors.blue,
     // shadowColor: Colors.grey,
     splashColor: Colors.transparent,
@@ -65,8 +65,8 @@ class AppTheme {
     //   opacity: 1,
     //   size: 24,
     // ),
-    // primaryTextTheme: const TextTheme(bodyLarge: TextStyle(color: Colors.blue)),
-    // textTheme: const TextTheme(bodyLarge: TextStyle(color: Colors.blue)),
+    primaryTextTheme: const TextTheme(bodyLarge: TextStyle(color: Colors.blue)),
+    textTheme: const TextTheme(bodyLarge: TextStyle(color: Colors.white)),
     // typography: Typography.material2018(),
     // actionIconTheme: ActionIconThemeData(
     //   backButtonIconBuilder: (context) => const Icon(Icons.arrow_back_ios),
@@ -98,8 +98,8 @@ class AppTheme {
     // dropdownMenuTheme: const DropdownMenuThemeData(),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
-          foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+          foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
