@@ -25,39 +25,67 @@ class _MyWidgetState extends State<TabMainPage> {
             SettingRoute(),
           ],
           bottomNavigationBuilder: (context, tabsRouter) {
-            return BottomNavigationBar(
-              currentIndex: tabsRouter.activeIndex,
-              onTap: tabsRouter.setActiveIndex,
-              items: [
-                BottomNavigationBarItem(
-                    icon: Image.asset(
-                      'assets/images/ic_home.png',
-                      width: 24,
-                      height: 24,
-                    ),
-                    label: "Home"),
-                BottomNavigationBarItem(
-                    icon: Image.asset(
-                      'assets/images/ic_search.png',
-                      width: 24,
-                      height: 24,
-                    ),
-                    label: "Search"),
-                BottomNavigationBarItem(
-                    icon: Image.asset(
-                      'assets/images/ic_bookmark.png',
-                      width: 24,
-                      height: 24,
-                    ),
-                    label: "Bookmark"),
-                BottomNavigationBarItem(
-                    icon: Image.asset(
-                      'assets/images/ic_setting.png',
-                      width: 24,
-                      height: 24,
-                    ),
-                    label: "Setting"),
-              ],
+            return Theme(
+              data: ThemeData(
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+              ),
+              child: BottomNavigationBar(
+                type: BottomNavigationBarType.fixed,
+                currentIndex: tabsRouter.activeIndex,
+                selectedItemColor: Colors.blue,
+                onTap: tabsRouter.setActiveIndex,
+                items: [
+                  BottomNavigationBarItem(
+                      activeIcon: Image.asset(
+                        'assets/images/ic_home_black.png',
+                        width: 24,
+                        height: 24,
+                      ),
+                      icon: Image.asset(
+                        'assets/images/ic_home.png',
+                        width: 24,
+                        height: 24,
+                      ),
+                      label: ""),
+                  BottomNavigationBarItem(
+                      activeIcon: Image.asset(
+                        'assets/images/ic_search_black.png',
+                        width: 24,
+                        height: 24,
+                      ),
+                      icon: Image.asset(
+                        'assets/images/ic_search.png',
+                        width: 24,
+                        height: 24,
+                      ),
+                      label: ""),
+                  BottomNavigationBarItem(
+                      activeIcon: Image.asset(
+                        'assets/images/ic_bookmark_black.png',
+                        width: 24,
+                        height: 24,
+                      ),
+                      icon: Image.asset(
+                        'assets/images/ic_bookmark.png',
+                        width: 24,
+                        height: 24,
+                      ),
+                      label: ""),
+                  BottomNavigationBarItem(
+                      activeIcon: Image.asset(
+                        'assets/images/ic_setting_black.png',
+                        width: 24,
+                        height: 24,
+                      ),
+                      icon: Image.asset(
+                        'assets/images/ic_setting.png',
+                        width: 24,
+                        height: 24,
+                      ),
+                      label: ""),
+                ],
+              ),
             );
           },
         ));
