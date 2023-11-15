@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
   GestureDetector _buildRegister(BuildContext context) {
     return GestureDetector(
         onTap: () {
-          // context.router.pushNamed('/home');
+          AutoRouter.of(context).pushNamed(RouterContants.signUpPage);
         },
         child: RichText(
             text: TextSpan(
@@ -144,8 +144,7 @@ class _LoginPageState extends State<LoginPage> {
           height: 40,
           child: ElevatedButton(
               onPressed: () {
-                AutoRouter.of(context)
-                    .pushNamed(RouterContants.forgotPasswordPage);
+                AutoRouter.of(context).replaceNamed(RouterContants.tabMainPage);
               },
               style: ButtonStyle(
                   backgroundColor:
@@ -267,7 +266,10 @@ class _LoginPageState extends State<LoginPage> {
                   style: const TextStyle(color: Colors.red, fontSize: 12)),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                AutoRouter.of(context)
+                    .pushNamed(RouterContants.forgotPasswordPage);
+              },
               child: Align(
                   alignment: Alignment.centerRight,
                   child: Text(AppLocalizations.of(context)!.forgotPassword)),

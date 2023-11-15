@@ -15,5 +15,32 @@ class AppRouter extends $AppRouter {
           path: RouterContants.forgotPasswordPage,
           page: ForgotPasswordRoute.page,
         ),
+        AutoRoute(
+          path: RouterContants.signUpPage,
+          page: SignUpRoute.page,
+        ),
+        AutoRoute(
+          path: RouterContants.tabMainPage,
+          page: TabMainRoute.page,
+          children: [
+            AutoRoute(
+              initial: true,
+              path: RouterContants.homePage,
+              page: HomeRoute.page,
+            ),
+            AutoRoute(
+              path: RouterContants.searchPage,
+              page: SearchRoute.page,
+            ),
+            AutoRoute(
+              path: RouterContants.bookmarkPage,
+              page: BookmarkRoute.page,
+            ),
+            AutoRoute(
+              path: RouterContants.settingPage,
+              page: SettingRoute.page,
+            ),
+          ],
+        ),
       ];
 }

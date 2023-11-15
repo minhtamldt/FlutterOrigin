@@ -6,8 +6,9 @@ import 'package:flutter_origin/injection_register.dart';
 
 class PageWidget<B extends BaseBloc> extends BaseStatefulWidget {
   final Widget? child;
+  final bool? useSafeArea;
 
-  const PageWidget({super.key, required this.child});
+  const PageWidget({super.key, required this.child, this.useSafeArea = true});
 
   @override
   State<PageWidget> createState() => _PageWidgetState<B>();
@@ -21,16 +22,21 @@ class _PageWidgetState<B extends BaseBloc>
     extends BaseStatefulWidgetState<PageWidget> {
   @override
   Widget build(BuildContext context) {
-    B bloc = InjectionRegister.instance.get<B>();
-    return Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: SafeArea(
-            child: BlocProvider<B>(
-                create: (context) => bloc,
-                child: Localizations.override(
-                  context: context,
-                  locale: const Locale('vi'),
-                  child: widget.child!,
-                ))));
+    return Scaffold(resizeToAvoidBottomInset: false, body: _buildBody());
+  }
+
+  _buildBody() {
+    var body = BlocProvider<B>(
+        create: (context) => InjectionRegister.instance.get<B>(),
+        child: Localizations.override(
+          context: context,
+          locale: const Locale('vi'),
+          child: widget.child!,
+        ));
+    if (widget.useSafeArea == true) {
+      return SafeArea(child: body);
+    } else {
+      return body;
+    }
   }
 }
