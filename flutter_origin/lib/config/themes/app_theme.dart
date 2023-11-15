@@ -71,14 +71,10 @@ class AppTheme {
     // actionIconTheme: ActionIconThemeData(
     //   backButtonIconBuilder: (context) => const Icon(Icons.arrow_back_ios),
     // ),
-    // appBarTheme: const AppBarTheme(
-    //   backgroundColor: Colors.white,
-    //   foregroundColor: Colors.blue,
-    //   systemOverlayStyle: SystemUiOverlayStyle(
-    //     statusBarColor: Colors.white,
-    //     statusBarIconBrightness: Brightness.dark,
-    //   ),
-    // ),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.white,
+      foregroundColor: Colors.black,
+    ),
     // badgeTheme: const BadgeThemeData(),
     // bannerTheme: const MaterialBannerThemeData(),
     // bottomAppBarTheme: const BottomAppBarTheme(),

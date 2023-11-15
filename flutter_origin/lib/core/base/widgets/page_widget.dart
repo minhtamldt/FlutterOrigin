@@ -6,9 +6,11 @@ import 'package:flutter_origin/injection_register.dart';
 
 class PageWidget<B extends BaseBloc> extends BaseStatefulWidget {
   final Widget? child;
+  final AppBar? appBar;
   final bool? useSafeArea;
 
-  const PageWidget({super.key, required this.child, this.useSafeArea = true});
+  const PageWidget(
+      {super.key, required this.child, this.appBar, this.useSafeArea = true});
 
   @override
   State<PageWidget> createState() => _PageWidgetState<B>();
@@ -22,7 +24,10 @@ class _PageWidgetState<B extends BaseBloc>
     extends BaseStatefulWidgetState<PageWidget> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(resizeToAvoidBottomInset: false, body: _buildBody());
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: _buildBody(),
+        appBar: _buildAppbar());
   }
 
   _buildBody() {
@@ -37,6 +42,14 @@ class _PageWidgetState<B extends BaseBloc>
       return SafeArea(child: body);
     } else {
       return body;
+    }
+  }
+
+  _buildAppbar() {
+    if (widget.appBar == null) {
+      return null;
+    } else {
+      return widget.appBar!;
     }
   }
 }
