@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_origin/presentation/counter/counter_page.dart';
 
 class OriginApp extends StatelessWidget {
-  const OriginApp({super.key});
+  final String? title;
+  const OriginApp({super.key, this.title});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: title!,
       theme: ThemeData(
         // This is the theme of your application.
         //
