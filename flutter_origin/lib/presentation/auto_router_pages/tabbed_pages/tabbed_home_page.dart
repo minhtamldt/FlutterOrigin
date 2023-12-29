@@ -3,26 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_origin/config/auto_router/app_router.dart';
 
 @RoutePage()
-class MainTabPage extends StatefulWidget {
-  const MainTabPage({super.key});
+class TabbedHomePage extends StatefulWidget {
+  const TabbedHomePage({super.key});
 
   @override
-  State<MainTabPage> createState() => _MainTabbedPageState();
+  State<TabbedHomePage> createState() => _TabbedHomePageState();
 }
 
-class _MainTabbedPageState extends State<MainTabPage> {
+class _TabbedHomePageState extends State<TabbedHomePage> {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
       animationDuration: const Duration(
           milliseconds: 0), // Turn off face animation when navigate tab
       routes: const [
-        ChildTabOneRoute(),
-        ChildTabTwoRoute(),
-        ChildTabThreeRoute(),
-        ChildTabFourRoute(),
-        ChidTabFiveRoute(),
-        ChildTabSixRoute()
+        TabOneRoute(),
+        TabTwoRoute(),
+        TabThreeRoute(),
+        TabFourRoute(),
+        TabFiveRoute(),
+        NaviTabSixRoute()
       ],
       bottomNavigationBuilder: _createBottomNavigation,
     );
@@ -31,7 +31,7 @@ class _MainTabbedPageState extends State<MainTabPage> {
   Widget _createBottomNavigation(BuildContext context, TabsRouter tabsRouter) {
     return BottomNavigationBar(
       type: BottomNavigationBarType
-          .fixed, //turn off scale item animtation when selected.
+          .fixed, //turn off scale item animta             tion when selected.
       selectedItemColor: Colors.black,
       unselectedItemColor: Colors.black38,
       unselectedLabelStyle: const TextStyle(color: Colors.black),

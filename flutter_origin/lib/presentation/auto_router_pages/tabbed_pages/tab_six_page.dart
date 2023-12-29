@@ -1,20 +1,16 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_origin/config/auto_router/app_router.dart';
 
 @RoutePage()
-class WrapChildTabSixPage extends AutoRouter {
-  const WrapChildTabSixPage({super.key});
-}
-
-@RoutePage()
-class ChildTabSixPage extends StatefulWidget {
-  const ChildTabSixPage({super.key});
+class TabSixPage extends StatefulWidget {
+  const TabSixPage({super.key});
 
   @override
-  State<ChildTabSixPage> createState() => _ChildTabSixPageState();
+  State<TabSixPage> createState() => _TabSixPageState();
 }
 
-class _ChildTabSixPageState extends State<ChildTabSixPage> {
+class _TabSixPageState extends State<TabSixPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,15 +35,18 @@ class _ChildTabSixPageState extends State<ChildTabSixPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              child: const Text('Push Outside'),
+              child: const Text('Push()'),
               onPressed: () {
-                AutoRouter.of(context).pushNamed("/outSideNaviRoute");
+                AutoRouter.of(context).push(
+                    SubFirstRoute(agrumentData: "push with Route instance"));
               },
             ),
             ElevatedButton(
-              child: const Text('Push InSide'),
+              child: const Text('PushNamed()'),
               onPressed: () {
-                AutoRouter.of(context).pushNamed("inSideNaviRoute");
+                // var arguments =
+                //     "${PathRouter.subFirstPage}:agrumentData=pushName Name";
+                // AutoRouter.of(context).pushNamed(arguments);
               },
             ),
             ElevatedButton(

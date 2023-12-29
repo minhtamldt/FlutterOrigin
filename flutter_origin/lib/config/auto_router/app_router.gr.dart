@@ -15,171 +15,74 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    ChidTabFiveRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ChidTabFivePage(),
-      );
-    },
-    ChildTabFourRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ChildTabFourPage(),
-      );
-    },
-    ChildTabOneRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ChildTabOnePage(),
-      );
-    },
-    ChildTabSixRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ChildTabSixPage(),
-      );
-    },
-    ChildTabThreeRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ChildTabThreePage(),
-      );
-    },
-    ChildTabTwoRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ChildTabTwoPage(),
-      );
-    },
-    InsideNaviRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const InsideNaviPage(),
-      );
-    },
     LoginRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const LoginPage(),
       );
     },
-    MainTabRoute.name: (routeData) {
+    NaviTabSixRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const MainTabPage(),
+        child: const NaviTabSixPage(),
       );
     },
-    OutsideNaviRoute.name: (routeData) {
+    SubFirstRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<SubFirstRouteArgs>(
+          orElse: () => SubFirstRouteArgs(
+              agrumentData: pathParams.getString('agrumentData')));
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const OutsideNaviPage(),
+        child: SubFirstPage(
+          key: args.key,
+          agrumentData: args.agrumentData,
+        ),
       );
     },
-    WrapChildTabSixRoute.name: (routeData) {
+    TabFiveRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const WrapChildTabSixPage(),
+        child: const TabFivePage(),
+      );
+    },
+    TabFourRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TabFourPage(),
+      );
+    },
+    TabOneRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TabOnePage(),
+      );
+    },
+    TabSixRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TabSixPage(),
+      );
+    },
+    TabThreeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TabThreePage(),
+      );
+    },
+    TabTwoRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TabTwoPage(),
+      );
+    },
+    TabbedHomeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TabbedHomePage(),
       );
     },
   };
-}
-
-/// generated route for
-/// [ChidTabFivePage]
-class ChidTabFiveRoute extends PageRouteInfo<void> {
-  const ChidTabFiveRoute({List<PageRouteInfo>? children})
-      : super(
-          ChidTabFiveRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ChidTabFiveRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [ChildTabFourPage]
-class ChildTabFourRoute extends PageRouteInfo<void> {
-  const ChildTabFourRoute({List<PageRouteInfo>? children})
-      : super(
-          ChildTabFourRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ChildTabFourRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [ChildTabOnePage]
-class ChildTabOneRoute extends PageRouteInfo<void> {
-  const ChildTabOneRoute({List<PageRouteInfo>? children})
-      : super(
-          ChildTabOneRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ChildTabOneRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [ChildTabSixPage]
-class ChildTabSixRoute extends PageRouteInfo<void> {
-  const ChildTabSixRoute({List<PageRouteInfo>? children})
-      : super(
-          ChildTabSixRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ChildTabSixRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [ChildTabThreePage]
-class ChildTabThreeRoute extends PageRouteInfo<void> {
-  const ChildTabThreeRoute({List<PageRouteInfo>? children})
-      : super(
-          ChildTabThreeRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ChildTabThreeRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [ChildTabTwoPage]
-class ChildTabTwoRoute extends PageRouteInfo<void> {
-  const ChildTabTwoRoute({List<PageRouteInfo>? children})
-      : super(
-          ChildTabTwoRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ChildTabTwoRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [InsideNaviPage]
-class InsideNaviRoute extends PageRouteInfo<void> {
-  const InsideNaviRoute({List<PageRouteInfo>? children})
-      : super(
-          InsideNaviRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'InsideNaviRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -197,43 +100,152 @@ class LoginRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [MainTabPage]
-class MainTabRoute extends PageRouteInfo<void> {
-  const MainTabRoute({List<PageRouteInfo>? children})
+/// [NaviTabSixPage]
+class NaviTabSixRoute extends PageRouteInfo<void> {
+  const NaviTabSixRoute({List<PageRouteInfo>? children})
       : super(
-          MainTabRoute.name,
+          NaviTabSixRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'MainTabRoute';
+  static const String name = 'NaviTabSixRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [OutsideNaviPage]
-class OutsideNaviRoute extends PageRouteInfo<void> {
-  const OutsideNaviRoute({List<PageRouteInfo>? children})
-      : super(
-          OutsideNaviRoute.name,
+/// [SubFirstPage]
+class SubFirstRoute extends PageRouteInfo<SubFirstRouteArgs> {
+  SubFirstRoute({
+    Key? key,
+    required String agrumentData,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SubFirstRoute.name,
+          args: SubFirstRouteArgs(
+            key: key,
+            agrumentData: agrumentData,
+          ),
+          rawPathParams: {'agrumentData': agrumentData},
           initialChildren: children,
         );
 
-  static const String name = 'OutsideNaviRoute';
+  static const String name = 'SubFirstRoute';
+
+  static const PageInfo<SubFirstRouteArgs> page =
+      PageInfo<SubFirstRouteArgs>(name);
+}
+
+class SubFirstRouteArgs {
+  const SubFirstRouteArgs({
+    this.key,
+    required this.agrumentData,
+  });
+
+  final Key? key;
+
+  final String agrumentData;
+
+  @override
+  String toString() {
+    return 'SubFirstRouteArgs{key: $key, agrumentData: $agrumentData}';
+  }
+}
+
+/// generated route for
+/// [TabFivePage]
+class TabFiveRoute extends PageRouteInfo<void> {
+  const TabFiveRoute({List<PageRouteInfo>? children})
+      : super(
+          TabFiveRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TabFiveRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [WrapChildTabSixPage]
-class WrapChildTabSixRoute extends PageRouteInfo<void> {
-  const WrapChildTabSixRoute({List<PageRouteInfo>? children})
+/// [TabFourPage]
+class TabFourRoute extends PageRouteInfo<void> {
+  const TabFourRoute({List<PageRouteInfo>? children})
       : super(
-          WrapChildTabSixRoute.name,
+          TabFourRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'WrapChildTabSixRoute';
+  static const String name = 'TabFourRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TabOnePage]
+class TabOneRoute extends PageRouteInfo<void> {
+  const TabOneRoute({List<PageRouteInfo>? children})
+      : super(
+          TabOneRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TabOneRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TabSixPage]
+class TabSixRoute extends PageRouteInfo<void> {
+  const TabSixRoute({List<PageRouteInfo>? children})
+      : super(
+          TabSixRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TabSixRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TabThreePage]
+class TabThreeRoute extends PageRouteInfo<void> {
+  const TabThreeRoute({List<PageRouteInfo>? children})
+      : super(
+          TabThreeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TabThreeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TabTwoPage]
+class TabTwoRoute extends PageRouteInfo<void> {
+  const TabTwoRoute({List<PageRouteInfo>? children})
+      : super(
+          TabTwoRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TabTwoRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TabbedHomePage]
+class TabbedHomeRoute extends PageRouteInfo<void> {
+  const TabbedHomeRoute({List<PageRouteInfo>? children})
+      : super(
+          TabbedHomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TabbedHomeRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

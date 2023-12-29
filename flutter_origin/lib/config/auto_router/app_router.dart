@@ -1,14 +1,16 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_origin/config/auto_router/path_router.dart';
 import 'package:flutter_origin/presentation/auto_router_pages/login_page.dart';
-import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/child_tab_five_page.dart';
-import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/child_tab_four_page.dart';
-import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/child_tab_one_page.dart';
-import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/child_tab_six_page.dart';
-import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/child_tab_three_page.dart';
-import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/child_tab_two_page.dart';
-import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/main_tab_page.dart';
-import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/nest_navigation/inside_navi_page.dart';
-import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/nest_navigation/outside_navi_page.dart';
+import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/nest_navigation/sub_first_page.dart';
+import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/tabbed_home_page.dart';
+import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/navi_tab_six_page.dart';
+import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/tab_five_page.dart';
+import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/tab_four_page.dart';
+import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/tab_one_page.dart';
+import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/tab_six_page.dart';
+import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/tab_three_page.dart';
+import 'package:flutter_origin/presentation/auto_router_pages/tabbed_pages/tab_two_page.dart';
 part 'app_router.gr.dart';
 
 @AutoRouterConfig()
@@ -16,58 +18,51 @@ class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          path: "/loginPage",
-          initial: true,
-          page: LoginRoute.page,
-        ),
+            path: PathRouter.loginPage,
+            initial: true,
+            page: LoginRoute.page,
+            type: const RouteType.material()),
         AutoRoute(
-          path: "/mainTabPage",
-          page: MainTabRoute.page,
+          path: PathRouter.tabbedHomePage,
+          page: TabbedHomeRoute.page,
           children: [
             AutoRoute(
-              path: "childTabOnePage",
-              page: ChildTabOneRoute.page,
+              path: PathRouter.tabOnePage,
+              page: TabOneRoute.page,
             ),
             AutoRoute(
-              path: "childTabTwoRoute",
-              page: ChildTabTwoRoute.page,
+              path: PathRouter.tabTwoPage,
+              page: TabTwoRoute.page,
             ),
             AutoRoute(
-              path: "childTabThreeRoute",
-              page: ChildTabThreeRoute.page,
+              path: PathRouter.tabThreePage,
+              page: TabThreeRoute.page,
             ),
             AutoRoute(
-              path: "childTabFourRoute",
-              page: ChildTabFourRoute.page,
+              path: PathRouter.tabFourPage,
+              page: TabFourRoute.page,
             ),
             AutoRoute(
-              path: "childTabFourRoute",
-              page: ChildTabFourRoute.page,
-            ),
-            AutoRoute(
-              path: "chidTabFiveRoute",
-              page: ChidTabFiveRoute.page,
+              path: PathRouter.tabFivePage,
+              page: TabFiveRoute.page,
             ),
             AutoRoute(
                 initial: true,
-                path: "wrapChildTabSixRoute",
-                page: WrapChildTabSixRoute.page,
+                path: PathRouter.naviTabSixPage,
+                page: NaviTabSixRoute.page,
                 children: [
                   AutoRoute(
                     initial: true,
-                    path: "childTabSixRoute",
-                    page: ChildTabSixRoute.page,
-                  ),
-                  AutoRoute(
-                    path: "inSideNaviRoute",
-                    page: InsideNaviRoute.page,
+                    path: PathRouter.tabSixPage,
+                    page: TabSixRoute.page,
                   ),
                 ]),
           ],
         ),
         AutoRoute(
-          path: "/outSideNaviRoute",
-          page: OutsideNaviRoute.page,
+          maintainState: false,
+          path: PathRouter.subFirstPage,
+          page: SubFirstRoute.page,
         ),
       ];
 }

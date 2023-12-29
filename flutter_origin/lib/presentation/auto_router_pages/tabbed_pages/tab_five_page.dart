@@ -2,14 +2,14 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class ChildTabFourPage extends StatefulWidget {
-  const ChildTabFourPage({super.key});
+class TabFivePage extends StatefulWidget {
+  const TabFivePage({super.key});
 
   @override
-  State<ChildTabFourPage> createState() => _ChildTabFourState();
+  State<TabFivePage> createState() => _TabFivePageState();
 }
 
-class _ChildTabFourState extends State<ChildTabFourPage> {
+class _TabFivePageState extends State<TabFivePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,13 +21,13 @@ class _ChildTabFourState extends State<ChildTabFourPage> {
   AppBar _createAppBar() {
     return AppBar(
       automaticallyImplyLeading: false,
-      title: const Text("Four"),
+      title: const Text("Five"),
     );
   }
 
   _buildBody() {
     return Container(
-      color: Colors.pink,
+      color: Colors.yellow,
     );
   }
 }

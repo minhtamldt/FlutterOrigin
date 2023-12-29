@@ -2,14 +2,14 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class OutsideNaviPage extends StatefulWidget {
-  const OutsideNaviPage({super.key});
+class TabThreePage extends StatefulWidget {
+  const TabThreePage({super.key});
 
   @override
-  State<OutsideNaviPage> createState() => _OutsideNavipageState();
+  State<TabThreePage> createState() => _TabThreePageState();
 }
 
-class _OutsideNavipageState extends State<OutsideNaviPage> {
+class _TabThreePageState extends State<TabThreePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,13 +20,14 @@ class _OutsideNavipageState extends State<OutsideNaviPage> {
 
   AppBar _createAppBar() {
     return AppBar(
-      title: const Text("Out Side Navi Page"),
+      automaticallyImplyLeading: false,
+      title: const Text("Two"),
     );
   }
 
   _buildBody() {
     return Container(
-      color: Colors.cyanAccent,
+      color: Colors.orange,
     );
   }
 }

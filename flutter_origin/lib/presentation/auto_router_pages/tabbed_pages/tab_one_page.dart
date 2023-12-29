@@ -2,14 +2,14 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class InsideNaviPage extends StatefulWidget {
-  const InsideNaviPage({super.key});
+class TabOnePage extends StatefulWidget {
+  const TabOnePage({super.key});
 
   @override
-  State<InsideNaviPage> createState() => _InsideNaviPageState();
+  State<TabOnePage> createState() => _TabOnePageState();
 }
 
-class _InsideNaviPageState extends State<InsideNaviPage> {
+class _TabOnePageState extends State<TabOnePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,13 +20,14 @@ class _InsideNaviPageState extends State<InsideNaviPage> {
 
   AppBar _createAppBar() {
     return AppBar(
-      title: const Text("InsideNaviPage"),
+      automaticallyImplyLeading: false,
+      title: const Text("One"),
     );
   }
 
   _buildBody() {
     return Container(
-      color: Colors.brown,
+      color: Colors.red,
     );
   }
 }

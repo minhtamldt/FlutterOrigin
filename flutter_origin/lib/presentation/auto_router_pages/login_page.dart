@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_origin/config/auto_router/path_router.dart';
 
 @RoutePage()
 class LoginPage extends StatefulWidget {
@@ -22,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
             ElevatedButton(
               child: const Text('Login'),
               onPressed: () {
-                AutoRouter.of(context).replaceNamed("/mainTabPage");
+                AutoRouter.of(context).replaceNamed(PathRouter.tabbedHomePage);
               },
             )
           ],
